@@ -13,7 +13,7 @@ Install
  
  Step 4. Change with the shell or cmd to the SINEAR-UI folder
  
- Step 5. Run "npm install" (Node JS has entered to the enviorenment variables)
+ Step 5. Run "npm install" (Node JS has to be entered to the enviorenment variables)
  
  Step 6. Run "npx ng serve" (It uses the angular cli out ouf the packges. Alternatively the ng command is added to the enviorenment                variables than just run "ng serve")
  
