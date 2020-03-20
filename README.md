@@ -25,9 +25,11 @@ Install
  
  After login press crtl + q to manually activate the loading spinner (I add this, to show how Hot-Keys work with angular).
  
- I used some HTML and CSS from external soruces for this project. Thx to this guys. I hope there is no copyright on it.
+ I used some HTML and CSS from external soruces for this project. Thx to this guys, I hope there is no copyright on it.
  
  https://codepen.io/Wujek_Greg/pen/GOpZbW
+ 
  https://designmodo.com/css3-accordion-menu/
+ 
  https://codepen.io/martinvd/pen/xbQJom
  
