@@ -1,0 +1,39 @@
+<!-- WAIT-Spinner -->
+<div wait [style.display]="isWait ? 'flex' : 'none'">
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+</div>
+
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login - SINEAR</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field [floatLabel]="'always'" appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+      <br>
+      <br>
+     
+      <mat-form-field [floatLabel]="'always'" appearance="standard" style="margin-bottom: 0px;">
+        <mat-label>Password</mat-label>
+          <input matInput [type]="!hide ? 'password' : 'text'" placeholder="Password" [(ngModel)]="password" pattern=".{6,}" required>
+          <svg width="113%" height="12px" viewBox="0 0 113% 12" class="svg">
+            <g transform="scale(1.13)">
+              <path d="M0,6 L223.166144,6 C217.241379,6 217.899687,6 225.141066,6 C236.003135,6 241.9279,6 249.827586,6 C257.727273,6 264.639498,6 274.514107,6 C281.097179,6 281.755486,6 276.489028,6"></path>
+           </g>
+          </svg>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button> 
+    </mat-form-field>
+   
+      <!--<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>-->
+    </mat-card-content>
+    <mat-card-actions>
+      <button default (click)="onSubmit()">Login</button>
+      <a class="btn btn-link" (click)="resetPW()">Forgot Password</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

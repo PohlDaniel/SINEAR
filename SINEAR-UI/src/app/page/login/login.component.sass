@@ -1,0 +1,74 @@
+@import "src/sass/mat-buttons.sass"
+@import "src/sass/mat-form-field.sass"
+
+$width: 340px
+$height: 300px
+
+div
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  background-color: #263A4B
+
+mat-card
+  width: $width
+  height: $height
+  background-color: #fff
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-left: -$width/2
+  margin-top: -$height/2
+  & mat-card-actions
+    & button[default]
+      padding-bottom: 6px
+  & mat-card-header
+    & mat-card-title
+      margin-left: -16px
+      padding-bottom: 6px
+
+.mat-form-field
+  width: 100%
+
+
+//underline color 
+::ng-deep .mat-form-field .mat-form-field-underline
+  background-color: #858585
+
+//remove underline and ripple from standard appearance
+::ng-deep .mat-form-field-appearance-standard.mat-focused .mat-form-field-ripple
+  display: none
+
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-underline
+  display: none  
+
+
+//wave line
+.mat-form-field-appearance-standard .svg
+  fill: none
+  path
+    stroke: #858585
+    stroke-width: 1
+    d
+      transition: all .2s ease
+
+input
+  transition: all .15s ease
+  &:focus
+    outline: none
+    + .svg path
+      stroke: #0e83cd
+      stroke-width: 2
+  &:valid
+    + .svg 
+      path
+        animation: elasticInput .8s ease forwards
+      + .check
+        transform: translate(0,0) scale(1)
+              
+@keyframes elasticInput
+  33%
+    d: path("M0,6 L226,6 C220,6 220.666667,6 228,6 C239,6 245,1 253,1 C261,1 268,12 278,6 C284.666667,6 285.333333,6 280,6")
+  66%
+    d: path("M0,6 L226,6 C220,6 220.666667,6 228,6 C239,6 245,10 253,10 C261,10 268,6 278,6 C284.666667,6 285.333333,6 280,6")

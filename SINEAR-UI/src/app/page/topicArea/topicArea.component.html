@@ -1,0 +1,46 @@
+<app-spinner *ngIf="isWait"></app-spinner>
+
+<div content>
+  <div>
+    <h1 class="sitename"><span>Topicareas</span></h1>
+  </div>
+
+  <div class="left">
+    <mat-form-field fullWidth>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field> 
+  </div>
+
+  <div class="right">
+    <mat-paginator [length]="entriesTotal" [pageSize]="pageSize" [pageIndex]="currentPage"
+                   [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
+
+  <div class="table-dimension">
+    <table mat-table [dataSource]="dataSource" matSort matSortDisableClear>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Topicarea </th>
+        <td mat-cell *matCellDef="let topicArea"> {{topicArea.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let topicArea"> 
+            <button mat-button (click)="deleteTopicArea(topicArea)">
+              <mat-icon svgIcon="custom_delete"></mat-icon>
+            </button>
+        </td>
+      </ng-container>        
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div><!--main content end-->
+<footer>
+  <div class="button-group" style="width: 140px;">
+    <div  (click)="newTopicArea()">
+      <div>New<br><span>Topicarea</span></div>
+    </div>
+  </div>
+</footer>

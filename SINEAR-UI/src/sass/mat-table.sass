@@ -1,0 +1,85 @@
+table
+  border-collapse: separate
+  border-spacing: 0
+  width: 100%
+
+.table-dimension
+  overflow-y: auto
+  overflow-x: hidden
+  height: calc(90vh - 250px)
+  width: calc(99vw - 100px)
+
+//table border
+td:first-child, th:first-child
+  border-left: 1px solid rgba(0, 0, 0, 0.1)
+  
+
+//header and data-cell 
+th
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+  border-right: 1px solid rgba(0, 0, 0, 0.1)
+  background-image: linear-gradient(to top, #263A4B 0%, #334f66 100%)
+  color: #fff
+  font-weight: 700
+  font-size: 14px
+  padding: 0 5px !important
+
+td 
+  border-right: 1px solid rgba(0, 0, 0, 0.1)   
+  font-size: 14px
+  text-align: left
+  padding: 0 5px !important
+
+//rows
+.mat-row:nth-child(odd)
+  background-color: #ebf5fc
+
+.mat-row:nth-child(even)
+  background-color: #f9fcfd
+
+//hover effects
+.mat-row:hover 
+  background-color: #d9dfe3
+
+.mat-table td:hover
+  background-color: #FFF842
+  color: #403E10
+  font-weight: bold
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px
+  transform: translate3d(6px, -6px, 0)
+  transition-delay: 0s
+  transition-duration: 0.4s
+  transition-property: all
+  transition-timing-function: line
+
+//sort header button
+//hide the default icon
+::ng-deep .mat-sort-header-button + div
+  display: none
+
+//default icon
+::ng-deep .mat-sort-header-button::after
+  content: ''
+  width: 20px
+  height: 12px
+  margin-left: 5px
+  background: url(/assets/svg/sort.no.svg) no-repeat center center
+  background-size: 12px
+
+
+//hover icon
+::ng-deep .mat-sort-header-button:hover::after
+  background: url(/assets/svg/sort.hover.svg) no-repeat center center
+  background-size: 12px
+
+
+//ascending icon
+th[aria-sort='ascending']::ng-deep .mat-sort-header-button::after
+  background: url(/assets/svg/sort.asc.svg) no-repeat center center
+  background-size: 12px
+
+
+//descending icon
+th[aria-sort='descending']::ng-deep .mat-sort-header-button::after
+  background: url(/assets/svg/sort.desc.svg) no-repeat center center
+  background-size: 12px

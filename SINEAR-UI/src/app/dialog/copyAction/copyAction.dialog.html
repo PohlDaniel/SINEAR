@@ -1,0 +1,26 @@
+<div >
+  <h1 mat-dialog-title><span>Copy Action</span></h1>
+</div>
+<mat-dialog-content>
+  <form [formGroup]="duplicateActionForm">
+    <div class="_row">
+      <mat-form-field style="margin-right: 20px; margin-top: 15px">
+        <input matInput formControlName="name" placeholder="New Actionname" required>
+      </mat-form-field>
+      <mat-form-field style="margin-right: 20px; margin-top: 15px">
+        <input matInput formControlName="startDate" placeholder="Start-Date" required>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button default [disabled]=this.duplicateActionForm.invalid (click)="copyAction()">
+    <div style="position: relative; top: -4px;">Save</div>
+  </button>
+  <button default (click)="close()">
+    <div style="position: relative; top: -4px;">Cancel</div>
+  </button>
+</mat-dialog-actions>
+  
+ 

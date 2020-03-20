@@ -1,0 +1,7 @@
+<app-spinner *ngIf="isWait"></app-spinner>
+
+<aside *ngIf="showSidebar$ | async">
+   <app-menu (ctrlQ)="isWait = !isWait"></app-menu>
+</aside>
+
+<router-outlet></router-outlet>

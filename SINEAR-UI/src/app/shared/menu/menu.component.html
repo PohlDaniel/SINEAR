@@ -1,0 +1,28 @@
+<div style="display:inline;">
+  <nav class ="accordion" >
+    <ul class ="menu" (click)="onClick($event)">
+      <li id="one">
+        <a routerLink="/login" routerLinkActive="active" (click)="this.authenticationService.logout();" >Logout</a>      
+      </li>
+      <li id="two">
+        <a  [class.active]="targetedSubmenu=='two'" >Submenu One</a>
+        <ul class="sub-menu" [class.sub-menu-open]="targetedSubmenu=='two'">
+          <li><a routerLink="/persons" routerLinkActive="active">Persons</a></li> 
+          <li><a routerLink="/tmp1" routerLinkActive="active">Item One</a></li>
+          <li><a routerLink="/tmp2" routerLinkActive="active">Item Two</a></li>
+        </ul>
+      </li>
+      <li id="three">
+        <a [class.active]="targetedSubmenu=='three'">Submenu two</a>
+        <ul class="sub-menu" [class.sub-menu-open]="targetedSubmenu=='three'">
+          <li><a routerLink="/topicareas" routerLinkActive="active">Topicareas</a></li> 
+          <li><a routerLink="/tmp3" routerLinkActive="active">Item One</a></li>
+          <li><a routerLink="/tmp4" routerLinkActive="active">Item Two</a></li>
+        </ul>
+      </li>
+      <li id="four">
+        <a  routerLink="/actions" class="no-menu" [class.active]="targetedSubmenu=='four'">Actions</a>
+      </li>     
+    </ul>
+  </nav>
+</div>

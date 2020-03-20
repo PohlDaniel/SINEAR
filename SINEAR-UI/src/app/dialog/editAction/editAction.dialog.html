@@ -1,0 +1,28 @@
+
+<div >
+  <h1 mat-dialog-title><span>Edit Action</span></h1>
+</div>
+
+<mat-dialog-content> 
+  <form [formGroup]="editActionForm">
+    <div class="_row">
+      <mat-form-field style="margin-right: 20px; margin-top: 15px">
+        <input matInput formControlName="startDate" placeholder="Start-Date" required>
+      </mat-form-field>
+      <mat-form-field style="margin-right: 20px; margin-top: 15px">
+        <input matInput formControlName="endDate" placeholder="End-Date" required>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button default [disabled]=this.editActionForm.invalid (click)="editAction()">
+    <div style="position: relative; top: -4px;">Save</div>
+  </button>
+  <button default (click)="close()">
+    <div style="position: relative; top: -4px;">Cancel</div>
+  </button>
+</mat-dialog-actions>
+    
+   

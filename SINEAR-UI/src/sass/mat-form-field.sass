@@ -1,0 +1,72 @@
+//Textfields
+
+//ripple color after mouseclick
+::ng-deep .mat-form-field:hover .mat-form-field-ripple
+  background-color: transparent
+
+
+//remove ripple transition it seems where is no solution without important
+::ng-deep .mat-form-field .mat-form-field-ripple
+  transition: none !important
+ 
+//ripple color for legacy and standard mat form field 
+::ng-deep .mat-form-field-appearance-legacy.mat-focused .mat-form-field-ripple
+  background-color: #0e83cd
+ 
+::ng-deep .mat-form-field-appearance-standard.mat-focused .mat-form-field-ripple
+  background-color: #0e83cd
+
+//textfield label color
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label
+  color: #074267 
+
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-label
+  color: #074267 
+
+::ng-deep .mat-form-field-appearance-legacy.mat-focused .mat-form-field-label
+  color: #074267
+  font-weight: bold
+
+::ng-deep .mat-form-field-appearance-standard.mat-focused .mat-form-field-label
+  color: #074267
+  font-weight: bold
+
+
+//textfield required colors (indents also commments)
+  ::ng-deep .mat-form-field .mat-form-field-required-marker
+    color: #00ff00
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-input-element
+    color: #00ff00
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label
+    color: #00ff00
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker
+    color: #00ff00
+
+  ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple
+    color: #00ff00
+
+//stretch the input fields
+.mat-form-field[fullWidth]
+  width: 100%
+
+//Textarea
+::ng-deep .tarea.mat-form-field .mat-form-field-underline
+  display: none
+
+::ng-deep .tarea.mat-form-field.mat-focused
+  background-color: transparent
+
+::ng-deep .tarea.mat-form-field .inline
+  border-style: groove 
+  border-width: thin
+
+::ng-deep .tarea.mat-form-field.mat-focused .inline
+  border-style: solid
+  border-width: medium
+  border-color: #0e83cd
+
+
+

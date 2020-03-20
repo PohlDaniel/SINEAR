@@ -1,0 +1,112 @@
+<app-spinner *ngIf="isWait"></app-spinner>
+
+<div content>
+  <div>
+    <h1 class="sitename"><span>Actions</span></h1>
+  </div>
+
+  <div class="left">
+    <mat-form-field fullWidth>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field> 
+  </div>
+
+  <div class="right">
+    <mat-paginator [length]="entriesTotal" [pageSize]="pageSize" [pageIndex]="currentPage"
+                   [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
+
+  <div class="table-dimension">
+    <table mat-table [dataSource]="dataSource" matSort matSortDisableClear>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let action"> {{action.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Start-Date </th>
+        <td mat-cell *matCellDef="let action"> {{action.startDate | date: 'dd.MM.yy HH:mm'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> End-Date </th>
+        <td mat-cell *matCellDef="let action">   {{action.endDate | date: 'dd.MM.yy HH:mm'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="finishedPlanning">
+        <th mat-header-cell *matHeaderCellDef> Finished Planning </th>
+        <td mat-cell *matCellDef="let action">   
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" 
+                        [checked]="action.finishedPlanning" 
+                        [disabled]="!(currentUser && (currentUser.role == 'ADMIN' || currentUser.role == 'ACTION_MANAGER'))"
+                        (click)="changeFinishedPlanning(action)">
+                  <div class="icon-box">
+                    <mat-icon svgIcon="custom_check"></mat-icon>
+                  </div>
+                </label>
+              </li>  
+            </ul>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="finished">
+        <th mat-header-cell *matHeaderCellDef> Finished </th>
+        <td mat-cell *matCellDef="let action">   
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" 
+                      [checked]="action.finished"
+                      [disabled]="!(currentUser && (currentUser.role == 'ADMIN' || currentUser.role == 'ACTION_MANAGER'))"
+                      (click)="changeFinished(action)">
+                <div class="icon-box">
+                  <mat-icon svgIcon="custom_check"></mat-icon>
+                </div>
+              </label>
+            </li>            
+          </ul>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef > </th>
+        <td mat-cell *matCellDef="let action" >
+          <button mat-button (click)="editAction(action)">
+            <mat-icon>{{'edit'}}</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="copy">
+        <th mat-header-cell *matHeaderCellDef > </th>
+        <td mat-cell *matCellDef="let action" >
+          <button mat-button (click)="copyAction(action)">
+            <mat-icon svgIcon="custom_copy"></mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef > </th>
+        <td mat-cell *matCellDef="let action" >
+          <button mat-button (click)="deleteAction(action)">                  
+            <mat-icon svgIcon="custom_delete"></mat-icon>
+          </button>
+        </td>
+      </ng-container>  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div><!--main content end-->
+<footer>
+  <div class="button-group" style="width: 140px;">
+    <div  (click)="newAction()">
+      <div>New<br><span>Action</span></div>
+    </div>
+  </div>
+</footer>

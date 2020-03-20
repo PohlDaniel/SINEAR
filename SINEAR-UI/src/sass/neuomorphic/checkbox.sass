@@ -1,0 +1,35 @@
+ul
+  & li
+    position: relative
+    list-style: none
+    text-align: center
+    margin: 5px
+    & label
+      position: relative 
+      cursor: pointer
+      & input[type="checkbox"] 
+        position: absolute
+        opacity: 0.0    
+      & .icon-box 
+        width: 27px
+        height: 27px
+        background: rgb(215, 225, 231)
+        display: flex
+        justify-content: center
+        align-items: center
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1)
+        border-radius: 5px             
+      & :checked ~ .icon-box 
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1)
+        & .mat-icon 
+          transform: scale(0.7)
+          color: #2989D8
+          margin-right: 2px
+          margin-bottom: 2px
+      & :not(:checked) ~ .icon-box 
+        & .mat-icon          
+          opacity: 0.0
+          
+          
+          
+        

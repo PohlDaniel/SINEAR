@@ -1,0 +1,147 @@
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+
+@font-face {
+    font-family: kaushan-script;
+    src: url('./KaushanScript-Regular.ttf') format('truetype');
+}
+
+.accordion{
+    background: radial-gradient(ellipse at left, #263A4B 0%, #334f66 40%, #131D26 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    transition: width .5s;
+    overflow: hidden;
+    z-index: 998;
+    opacity: .95;
+    box-shadow: 10px 0 0 0 rgba(#FFF, 0.0);
+    animation: navbg 10s linear infinite;
+    cursor: pointer
+}
+
+.accordion:hover{
+    width: 250px;
+}
+
+/*menu links the 40px determine the height*/
+.accordion li > a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #999999;
+    min-width: 250px;
+    padding: 0 10px 0 50px;
+    font: normal 15px/40px Roboto-Light;
+}
+
+/*add the icons*/
+.accordion ul > li > a:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 25px;
+    height: 25px;
+    margin: 7px 0 0 12px;
+    background-repeat: no-repeat; 
+}
+
+.accordion ul.menu > li:nth-child(1) > a:before {  
+    background-image: url(..\..\..\assets\svg\logout.svg);
+}
+
+.accordion ul.menu > li:nth-child(2) > a:before {
+    background-image: url(..\..\..\assets\svg\menu.svg);
+}
+
+.accordion ul.menu > li:nth-child(3) > a:before {  
+    background-image: url(..\..\..\assets\svg\menu.svg);
+}
+
+.accordion ul.menu > li:nth-child(4) > a:before {
+    background-image: url(..\..\..\assets\svg\activity.svg);
+}
+
+.accordion ul.menu > li:nth-child(2) > ul.sub-menu > li:nth-child(1) > a:before {  
+    background-image: url(..\..\..\assets\svg\users.svg);
+}
+
+.accordion ul.menu > li:nth-child(3) > ul.sub-menu > li:nth-child(1) > a:before {  
+    background-image: url(..\..\..\assets\svg\myactivity.svg);
+}
+
+/*style the submenus*/
+.sub-menu li a {
+    color: #797979;
+    text-shadow: 1px 1px 0px rgba(255,255,255, .2);
+    background: #e5e5e5;
+    border-bottom: 1px solid #c9c9c9;
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+.sub-menu li:last-child a { border: none; }
+
+/*hover and active states */
+.accordion ul.menu > li:hover > a {
+    text-shadow: none;  
+    box-shadow: none;
+    color: #fff;
+    background: rgba(255,255,255, 0.2);  
+}
+
+.accordion ul.menu > li > a.active{
+    text-shadow: none;  
+    box-shadow: none;
+    color: #fff;
+    background: #2989D8;
+}
+
+
+
+/*.accordion ul.menu > li > a.no-menu.active {
+    text-shadow: none;  
+    box-shadow: none;
+    color: #fff;
+    background: #ff0000;
+}*/
+
+
+.accordion ul > li .sub-menu li:hover > a { 
+    text-shadow: none;  
+    box-shadow: none;
+    color: #fff;
+    background: rgba(255,255,255, 0.5);
+}
+
+.accordion ul.menu li ul.sub-menu li > a.active { 
+    text-shadow: none;  
+    box-shadow: none;
+    color: #fff;
+    background: #20d310; 
+}
+
+
+.accordion ul li > .sub-menu {
+    transform:scaleY(0);
+    height: 0px;
+    /*max-height: 0px;*/
+    overflow: hidden;
+ 
+    -webkit-transition: transform 0.6s ease-in-out;
+    -moz-transition: transform 0.6s ease-in-out;
+    -o-transition: transform 0.6s ease-in-out;
+    -ms-transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+}
+ 
+
+.accordion ul li > .sub-menu-open {
+    height: auto;
+    /*max-height: 200px;*/
+    transform:scaleY(1);
+    transform-origin: top;
+}
