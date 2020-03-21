@@ -23,7 +23,7 @@ Install
  Step 8. At http://localhost:8080/h2-console the H2-Console should be reachable. (JDBC URL: jdbc:h2:./database/sineardb | User Name: sa            | Password: password ).
  
  
- After login press crtl + q to manually activate the loading spinner (I add this, to show how Hot-Keys work with angular).
+After login press crtl + q to manually activate the loading spinner (I add this, to show how Hot-Keys work with angular). Out of postman use e.q. http://test:test@localhost:8080/restAPI/persons/getAll as get request to access the database directly without sessionid. 
  
  I used some HTML and CSS from external soruces for this project. Thx to this guys, I hope there is no copyright on it.
  
