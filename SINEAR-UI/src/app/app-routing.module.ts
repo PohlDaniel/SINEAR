@@ -6,6 +6,7 @@ import {PersonComponent} from './page/person/person.component';
 import {LoginComponent} from './page/login/login.component';
 import {Role} from './model/role.enum';
 import {TopicAreaComponent} from './page/topicArea/topicArea.component';
+import {KartComponent} from './page/kart/kart.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,12 @@ const routes: Routes = [
   {
     path: 'persons',
     component: PersonComponent,
+    canActivate: [AuthGuard],
+    data : { showSidebar: true }
+  },
+  {
+    path: 'kart',
+    component: KartComponent,
     canActivate: [AuthGuard],
     data : { showSidebar: true }
   },

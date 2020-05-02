@@ -22,6 +22,9 @@ import {PersonComponent} from './page/person/person.component';
 import {ActionsComponent} from './page/actions/actions.component';
 import {TopicAreaComponent} from './page/topicArea/topicArea.component';
 import {SpinnerComponent} from './shared/spinner/spinner.component';
+import {KartComponent} from './page/kart/kart.component';
+
+
 
 import {NewPersonDialog} from './dialog/newPerson/newPerson.dialog';
 import {EditPersonDialog} from './dialog/editPerson/editPerson.dialog';
@@ -45,6 +48,7 @@ import {CtrlQDirective} from './directives/crtl-q.directive';
     LoginComponent,
     PersonComponent,
     TopicAreaComponent,
+    KartComponent,
     PopUpDialog,
     NewPersonDialog,
     EditPersonDialog,

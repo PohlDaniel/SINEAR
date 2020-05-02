@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   loadingPassword = false;
   returnUrl: string;
   errorPassword = '';
-
-
+  isWait: boolean = false;
+  hide: boolean = true;
 
   constructor(
     private readonly route: ActivatedRoute,

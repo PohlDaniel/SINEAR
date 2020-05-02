@@ -14,7 +14,7 @@ export class AppComponent {
   showSidebar$: Observable<boolean>;
   private defaultShowSidebar = true;
 
-  private isWait: boolean;
+  isWait: boolean = false;
 
   constructor(
       private router: Router,

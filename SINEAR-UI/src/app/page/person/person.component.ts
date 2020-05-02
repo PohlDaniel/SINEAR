@@ -45,7 +45,7 @@ export class PersonComponent implements OnInit {
               private domSanitizer: DomSanitizer) {
 
     this.currentUser = this.authenticationService.currentUserValue;
-    this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/delete.svg"));
+    this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/delete.svg"));
   }
 
   ngOnInit() {

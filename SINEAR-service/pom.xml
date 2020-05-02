@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.sinear</groupId>
+        <artifactId>sinear</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <groupId>de.sinear</groupId>
+    <artifactId>sinear-service</artifactId>
+    <version>1.1</version>
+    <name>sinear-service</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+	<!-- I will let the DB2 jdbc driver there maybe someone has to use it also-->
+	<repositories>
+  		<repository>
+    	<id>repo</id>
+    	<url>file://${project.basedir}/lib</url>
+  		</repository>
+	</repositories>   
+
+    <dependencies>
+    	<!-- DB2 jdbc driver added during local repository-->
+    	<!--<dependency>
+    		<groupId>com.ibm.db2.jcc</groupId>
+    		<artifactId>db2jcc4</artifactId>
+    		<version>4.25.13</version>
+  		</dependency>-->
+    
+    	<!-- Use H2 for copy and past this application -->
+    	<dependency>
+    		<groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+    	</dependency>
+    
+    	<!-- SpringBoot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>            
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+    	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-lang3</artifactId>
+		</dependency>
+		
+       <dependency>
+    		<groupId>commons-codec</groupId>
+    		<artifactId>commons-codec</artifactId>
+		</dependency>
+		
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+    
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

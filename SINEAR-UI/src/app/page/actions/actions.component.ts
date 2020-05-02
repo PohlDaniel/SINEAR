@@ -48,9 +48,9 @@ import{ConfirmDialog}from '../../dialog/confirm/confirm.dialog';
       private domSanitizer: DomSanitizer){
   
         this.currentUser = this.authenticationService.currentUserValue;
-        this.matIconRegistry.addSvgIcon("custom_copy", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/copy-file.svg"));
-        this.matIconRegistry.addSvgIcon("custom_check", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/stop.svg"));
-        this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/delete.svg"));
+        this.matIconRegistry.addSvgIcon("custom_copy", this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/copy-file.svg"));
+        this.matIconRegistry.addSvgIcon("custom_check", this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/stop.svg"));
+        this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/delete.svg"));
       }
 
     ngOnInit() {

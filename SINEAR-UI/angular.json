@@ -29,9 +29,13 @@
             "styles": [
               "src/sass/styles.sass",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/fonts/fonts.css"
+              "src/assets/fonts/fonts.css",
+			  "unity/TemplateData/style.css"
             ],
-            "scripts": []
+            "scripts": [
+			  "unity/TemplateData/UnityProgress.js",
+			  "unity/Build/UnityLoader.js"
+			]
           },
           "configurations": {
             "production": {

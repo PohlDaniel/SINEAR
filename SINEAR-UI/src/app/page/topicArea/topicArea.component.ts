@@ -39,7 +39,7 @@ import {ConfirmDialog} from '../../dialog/confirm/confirm.dialog';
               private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer){
 
-    this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/delete.svg"));
+    this.matIconRegistry.addSvgIcon("custom_delete", this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/delete.svg"));
   }
 
   ngOnInit() {
